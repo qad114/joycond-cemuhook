@@ -654,6 +654,7 @@ def handle_devices(stop_event):
 
         del players[0]
         for player, devices in sorted(players.items()):
+            devices = [d for d in devices if 'IMU' in d.name]
             if not devices:
                 continue
 
